@@ -1,2 +1,3 @@
-# my-pgp-keys
-My PGP keys
+このレポジトリには、PGPkeyが保管されてます。
+
+[PGPkey一覧](keys)
