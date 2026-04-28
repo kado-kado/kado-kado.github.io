@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>PGP Identity Dash</title>
+        <script src="https://unpkg.com/openpgp@5.11.0/dist/openpgp.min.js"></script>
+        <link href="style/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>My Profile</h1>
+        <div class="grid">
+            <div class="card_nodom">
+                <div class="sns-name">
+                    <img src="https://avatars.githubusercontent.com/u/108268013">
+                </div>
+                <h1>Kado</h1>
+            </div>
+            <div class="card">
+                <h3>プログラム作ったり、セキュリティを嗜んでたりします。</h3>
+                <h3>TRPGをよくやってます。</h3>
+            </div>
+        </div>
+        <h1>My SNS</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="sns-name">
+                    <span>Programming</span>
+                </div>
+                <a href="https://github.com/kado-kado">github</a>
+                <a href="https://gitlab.com/kado-kkado">gitlab</a>
+                <a href="https://codepen.io/kado-kado">codepen</a>
+
+            </div>
+            <div class="card">
+                <div class="sns-name">
+                    <span>Contact me</span>
+                </div>
+                <a href="https://signal.me/#eu/OvDpInEL1jY7p-SFEORdx1fnuLHO85foWhnyHvIlny5sfRUf67dE8ZQ9KcEyf5vo">signal</a>
+                <a href="https://discordapp.com/users/1086945181158359050">discord</a>
+                <a href="https://x.com/kadokado112">twitter</a>
+                <a href="https://instagram.com/kado.kado112">instagram</a>
+                <a href="https://bsky.app/profile/kadokado112.bsky.social">bluesky</a>
+                <a href="https://xrypton.56.ax/profile/kado">xrypton</a>
+            </div>
+            <div class="card">
+                <h3>できるだけsignalで連絡してください。</h3>
+                <h3>また、不可能な場合Protonmailで連絡してください。</h3>
+                <p>自分がどのSNSのアカウントを持っているかの確認で羅列しています。</p>
+            </div>
+        </div>
+        <h1>My notes</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="sns-name">
+                    <span>github main repository</span>
+                </div>
+                <a href="https://github.com/kado-kado/AES_Encrypted_URL_Disguiser">AES-URL</a>
+                <a href="https://github.com/kado-kado/Splatoon-Tools">Splatoon-Tools</a>
+            </div>
+            <div class="card">
+            <div class="sns-name">
+                    <span>Security Research</span>
+                </div>
+                <a href="https://github.com/kado-kado/Lockdown_Mode">Lockdown_Mode</a>
+                <a href="https://github.com/kado-kado/Managed_Configuration">Managed_Configuration</a>
+            </div>
+        </div>
+        <h1>My PGPs</h1>
+        <div id="app" class="grid"></div>
+        <p>copyright 2026 Kado. All rights reserved.</p>
+        <script src="script/pgp.js"></script>
+    </body>
+</html>
