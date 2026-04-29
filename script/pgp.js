@@ -1,7 +1,7 @@
 const KEY_FILES = [
-        'keys/github/2026-04-28.asc',
-        'keys/proton/2026-04-28.asc',
-        'keys/xrypton.56.ax/2026-02-20.asc'
+        'https://raw.githubusercontent.com/kado-kado/pgp/refs/heads/main/keys/github/github.asc',
+        'https://raw.githubusercontent.com/kado-kado/pgp/refs/heads/main/keys/proton/proton.asc',
+        'https://raw.githubusercontent.com/kado-kado/pgp/refs/heads/main/keys/xrypton.56.ax/xrypton.asc'
     ];
 
 async function init() {
@@ -20,11 +20,11 @@ async function createKeyCard(filePath) {
     card.innerHTML = `Loading ${filePath}...`;
     app.appendChild(card);
 
-    const parts = filePath.split('/');
+    const parts = filePath.split('https://raw.githubusercontent.com/kado-kado/pgp/refs/heads/main/keys/')[1]?.split('/') || [];
     const snsName = parts[1] || 'Unknown';
 
     try {
-        const res = await fetch(`./${filePath}`);
+        const res = await fetch(`${filePath}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
         const text = await res.text();
@@ -55,7 +55,7 @@ async function createKeyCard(filePath) {
                 <div class="meta-item"><span class="label">Algorithm</span><span>${algoName}</span></div>
                 <div class="meta-item"><span class="label">Expires</span><span>${dateStr}</span></div>
                 <div class="fp">${fp}</div>
-                <div class="file-path">${filePath}</div>
+                <div class="file-path"><a href="${filePath}" target="_blank" rel="noopener noreferrer">file: ${snsName}</a></div>
             </div>`;
     } catch (e) {
         console.error(`Card Error (${snsName}):`, e);
